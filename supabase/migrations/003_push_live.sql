@@ -15,7 +15,7 @@ returns json language sql stable security definer set search_path = public as $$
   select json_build_object(
     'secret', (select decrypted_secret from vault.decrypted_secrets where name = 'pakka_push_secret'),
     'jwk', (select decrypted_secret from vault.decrypted_secrets where name = 'pakka_vapid_jwk')::json,
-    'subject', 'https://pakka-family.netlify.app');
+    'subject', 'https://isra-rehmat.github.io/pakka/');
 $$;
 
 create or replace function public.push_cleanup(p_endpoints text[])
